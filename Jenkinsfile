@@ -10,7 +10,8 @@ pipeline{
         stage ('build with terraform'){
             steps{
                 sh 'terraform init'
-                sh 'terraform apply -var-file "dev.tfvars" -auto-approve'
+                //sh 'terraform apply -var-file "dev.tfvars" -auto-approve'
+                sh 'terraform destroy -var-file "dev.tfvars" -auto-approve'
             }
         }
 
